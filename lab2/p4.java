@@ -95,23 +95,14 @@ public class p4{
     public static void main(String[] args){
         Scanner scan = new Scanner(System.in);
 
-        Time t1 = new Time(15, 14,78);
+        Time t1 = new Time(23, 5,6);
 
         System.out.println(t1.toStandart());
         System.out.println(t1.toUniversal());
 
-        Time t2 = new Time(2, 45, 1);
-        Time t4 = new Time(15, 14, 78);
+        Time t2 = new Time(1, 45, 15);
 
         t1.add(t2);
-
-        System.out.println(t1.toStandart());
-        System.out.println(t1.toUniversal());
-
-        Time t3 = Time.Sum(t4, t2);
-
-        System.out.println(t3.toStandart());
-        System.out.println(t3.toUniversal());
 
     }
 }
