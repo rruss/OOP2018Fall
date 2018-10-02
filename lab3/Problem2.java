@@ -4,8 +4,8 @@ abstract class Shapes{
     private double volume;
     private double surfaceArea;
 
-    public abstract String volume();
-    public abstract String surfaceArea();
+    abstract String volume();
+    abstract String surfaceArea();
 }
 
 class Cylinder extends Shapes {
@@ -33,7 +33,7 @@ class Sphere extends Shapes{
     private double radius;
     Sphere(){
     }
-    Sphere(double height){
+    Sphere(double radius){
         this.radius = radius;
     }
 

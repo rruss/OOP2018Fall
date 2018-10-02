@@ -9,11 +9,11 @@ class Person{
     public void setName(String newName){
         this.name = newName;
     }
-    public String getName(){
+    String getName(){
         return this.name;
     }
 
-    public boolean equals(String name1, String name2){
+    boolean equals(String name1, String name2){
         for(int i = 0; i < Math.max(name1.length(), name2.length()); i++){
             if(name1.charAt(i) != name2.charAt(i)) return false;
         }
@@ -61,7 +61,7 @@ class Employee extends Person{
         return super.toString() + " Salary: " + salary + ". Year: " + year +
                 ". Insurance number: " + insNum + ".";
     }
-    public boolean equals(String name1, double salary1, int year1, String insNum1, String name2, double salary2, int year2, String insNum2){
+    boolean equals(String name1, double salary1, int year1, String insNum1, String name2, double salary2, int year2, String insNum2){
         super.equals(name1, name2);
         if(salary1 != salary2) return false;
         if(year1 != year2) return false;

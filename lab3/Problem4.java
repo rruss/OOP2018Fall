@@ -6,7 +6,7 @@ class Person{
     Person(String name){
         this.name = name;
     }
-    public String getName(){
+    String getName(){
         System.out.println("Person Name: " + name);
         return name;
     }

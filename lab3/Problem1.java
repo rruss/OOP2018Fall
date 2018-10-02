@@ -11,7 +11,7 @@ class Animal{
         this.name = newName;
     }
 
-    public String getAnimal(){
+    String getAnimal(){
         return "This rabbit's name is " + name;
     }
 }
