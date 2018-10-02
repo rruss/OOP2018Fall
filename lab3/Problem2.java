@@ -23,7 +23,6 @@ class Cylinder extends Shapes {
         return "Volume of cylinder " + (this.height * Math.PI * this.radius * this.radius);
     }
 
-    @Override
     public String surfaceArea() {
         return "Surface Area of cylinder " +
                 (this.height * 2 * Math.PI * this.radius + 2 * Math.PI * this.radius * this.radius);
@@ -42,7 +41,6 @@ class Sphere extends Shapes{
         return "Volume of sphere " + (4 / 3 * Math.PI * this.radius * this.radius * this.radius);
     }
 
-    @Override
     public String surfaceArea() {
         return "Surface Area of sphere " + (4 * Math.PI * this.radius * this.radius);
     }
@@ -60,7 +58,6 @@ class Cube extends Shapes{
         return "Volume of cube " + (side * side * side);
     }
 
-    @Override
     public String surfaceArea() {
         return "Surface Area of cube " + (6 * this.side * this.side);
     }

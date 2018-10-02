@@ -31,7 +31,6 @@ class Rabbit extends Animal{
     }
     public String getColor(){ return color; }
 
-    @Override
     public String getAnimal() {
         return super.getAnimal() + " and it's " + color + ".";
     }
