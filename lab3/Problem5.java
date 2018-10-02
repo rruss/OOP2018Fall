@@ -113,7 +113,15 @@ class Knight extends Piece{
 
     @Override
     boolean isLegalMove() {
-
+        if(this.i1 + 2 == this.i2){
+            if(this.j1 - 1 == this.j2 && this.j1 + 1 == this.j2) return true;
+        }
+        if(this.i1 - 2 == this.i2){
+            if(this.j1 - 1 == this.j2 && this.j1 + 1 == this.j2) return true;
+        }
+        if(this.i1 == this.i2){
+            if(this.j1 - 1 == this.j2 && this.j1 + 1 == this.j2) return true;
+        }
         return false;
     }
 }
@@ -140,7 +148,8 @@ class Bishop extends Piece{
 
     @Override
     boolean isLegalMove() {
-
+        if((this.i1 - this.i2 == this.j1 - this.j2) || (this.i1 + this.i2 == this.j1 - this.j2) ||
+                (this.i1 - this.i2 == this.j1 + this.j2) || (this.i1 + this.i2 == this.j1 + this.j2)) return true;
         return false;
     }
 }
@@ -167,7 +176,17 @@ class Queen extends Piece{
 
     @Override
     boolean isLegalMove() {
-
+        if((this.i1 - this.i2 == this.j1 - this.j2) || (this.i1 + this.i2 == this.j1 - this.j2) ||
+                (this.i1 - this.i2 == this.j1 + this.j2) || (this.i1 + this.i2 == this.j1 + this.j2)) return true;
+        if((this.i1 == this.i2 && this.j1 != this.j2) || (this.i1 != this.i2 && this.j1 == this.j2)) return true;
         return false;
     }
+}
+
+class Problem5{
+    public static void main(String[] args){
+        Pawn pawn = new Pawn(1, 2, 1, 3);
+        System.out.println(pawn.isLegalMove());
+    }
+
 }
