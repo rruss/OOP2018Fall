@@ -27,9 +27,9 @@ class Car implements CarVehicle
 
 abstract class MotorVehicle
 {
-    int fuel;
+    double fuel;
 
-    int getFuel()
+    double getFuel()
     {
         return this.fuel;
     }
@@ -39,13 +39,13 @@ abstract class MotorVehicle
 
 class Motorcycle extends MotorVehicle
 {
-    int fuel;
+    double fuel;
 
-    Motorcycle(int fuel) {
+    Motorcycle(double fuel) {
         this.fuel = fuel;
     }
     @Override
-    int getFuel() {
+    double getFuel() {
         return super.getFuel();
     }
 

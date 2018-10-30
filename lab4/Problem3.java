@@ -35,7 +35,7 @@ class Person  {
     }
 }
 
-public class Employee extends Person implements Comparable, Cloneable {
+public class Employee extends Person implements Comparable{
     private double salary;
     private Date hireDate;
     private String insuranceNumber;
@@ -86,11 +86,6 @@ public class Employee extends Person implements Comparable, Cloneable {
         else{
             return false;
         }
-    }
-
-    @Override
-    protected Employee clone() throws CloneNotSupportedException {
-        return (Employee) super.clone();
     }
 
     @Override
@@ -176,11 +171,6 @@ public class Manager extends Employee {
     }
 
     @Override
-    public Manager clone() throws CloneNotSupportedException {
-        return (Manager) super.clone();
-    }
-
-    @Override
     public int compareTo(Object o) {
         Manager other = (Manager) o;
 
@@ -193,7 +183,7 @@ public class Manager extends Employee {
 
 
 public class Problem3 {
-    public static void main(String[] args) throws CloneNotSupportedException {
+    public static void main(String[] args){
         Scanner s = new Scanner(System.in);
 
         Employee e1 = new Employee("Aza", 3);
@@ -202,23 +192,14 @@ public class Problem3 {
 
         System.out.println(e1.compareTo(e2));
 
-        Employee e3 = e2.clone();
-
-        System.out.println(e2.compareTo(e3));
-
         ArrayList<Employee> ems = new ArrayList<Employee>();
 
         ems.add(e1);
         ems.add(e2);
-        ems.add(e3);
 
-        Manager m1 = new Manager("Qaz", 2, ems);
+        Manager m1 = new Manager("Qwe", 2, ems);
         Manager m2 = new Manager("Wsx", 4, ems);
 
         System.out.println(m1.compareTo(m2));
-
-        Manager m3 = m1.clone();
-
-        System.out.println(m1.compareTo(m3));
     }
 }
