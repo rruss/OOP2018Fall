@@ -1,6 +1,6 @@
 import java.util.*;
 class Person{
-    private String name;
+    String name;
     Person(){
     }
     Person(String name){
@@ -13,9 +13,10 @@ class Person{
         return this.name;
     }
 
-    boolean equals(String name1, String name2){
-        for(int i = 0; i < Math.max(name1.length(), name2.length()); i++){
-            if(name1.charAt(i) != name2.charAt(i)) return false;
+    public boolean equals(Object obj){
+        Person other = (Person)obj;
+        for(int i = 0; i < Math.max(name.length(), other.name.length()); i++){
+            if(name.charAt(i) != other.name.charAt(i)) return false;
         }
         return true;
     }
@@ -25,11 +26,10 @@ class Person{
 }
 
 class Employee extends Person{
-    private double salary;
-    private int year;
-    private String insNum;
+    double salary;
+    int year;
+    String insNum;
     Employee(){
-        super();
     }
     Employee(String name, double salary, int year, String insNum){
         super(name);
@@ -61,12 +61,13 @@ class Employee extends Person{
         return super.toString() + " Salary: " + salary + ". Year: " + year +
                 ". Insurance number: " + insNum + ".";
     }
-    boolean equals(String name1, double salary1, int year1, String insNum1, String name2, double salary2, int year2, String insNum2){
-        super.equals(name1, name2);
-        if(salary1 != salary2) return false;
-        if(year1 != year2) return false;
-        for(int i = 0; i < Math.max(insNum1.length(), insNum2.length()); i++){
-            if(insNum1.charAt(i) != insNum2.charAt(i)) return false;
+    public boolean equals(Object obj){
+        Employee guest = (Employee) obj;
+        super.equals(guest);
+        if(this.salary != guest.salary) return false;
+        if(this.year != guest.year) return false;
+        for(int i = 0; i < Math.max(this.insNum.length(), guest.insNum.length()); i++){
+            if(this.insNum.charAt(i) != guest.insNum.charAt(i)) return false;
         }
         return true;
     }
